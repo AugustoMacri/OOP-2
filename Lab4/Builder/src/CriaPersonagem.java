@@ -29,12 +29,14 @@ public class CriaPersonagem implements Builder{
         personagem.setEquipamento(equipamento);
     }
 
+  
     public void atributos(int vida, int forca, int def){
-        personagem.setVida(vida);
-        personagem.setForca(forca); 
-        personagem.setDef(def);
+     personagem.setVida(vida);
+     personagem.setForca(forca); 
+     personagem.setDef(def);
     }
-
+    
+    
     public Personagem retornaPersonagem(){
         return personagem;
     }

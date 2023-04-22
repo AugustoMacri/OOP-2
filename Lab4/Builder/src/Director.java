@@ -1,4 +1,6 @@
+import java.util.Random;
 import java.util.Scanner;
+
 
 public class Director {
     
@@ -28,7 +30,7 @@ public class Director {
             System.out.println("1.Escolher nome");
             System.out.println("2.Escolher classe");
             System.out.println("3.Escolher equipamento");
-            System.out.println("4.Escolher atributos");
+            System.out.println("4.Gerar atributos aleatóriamente");
             System.out.println("5.Concluir Personagem");
             opcao = sc.nextInt();
             sc.nextLine();
@@ -50,7 +52,7 @@ public class Director {
                 break;
             }
         }
-        System.out.println(personagem); //porque caralhos isso aqui tá acontecendo 
+        System.out.println(personagem);
         return personagem;
             
     }
@@ -121,31 +123,11 @@ public class Director {
     }
 
     public void atributos(){
-        int pontos = 10;
-        int[] campos = new int[3];
-        String [] nomesCampos = {"Vida", "Forca", "Defesa"};
-
-        for(int i=0; i<campos.length; i++){
-            int qnt;
-            System.out.println("Voce possui " + pontos + " disponiveis");
-            System.out.println("Coloque quantos pontos deseja para sua " + nomesCampos[i]);
-            qnt = sc.nextInt();
-            if(qnt < pontos){
-                System.out.println("Pontos atribuidos a " + nomesCampos[i]);
-                campos[i] = qnt; 
-                pontos-=qnt;
-            }else if(qnt == pontos){
-                System.out.println("Pontos atribuidos a" + nomesCampos[i]);
-                campos[i] = qnt; 
-                System.out.println("***Pontos acabaram***");
-                pontos-=qnt;
-            }else{
-                System.out.println("Pontos insuficiente");
-                campos[i] = 0; 
-            }
-
-        }
-
+        Random val = new Random();
+        personagem.setVida(val.nextInt(10));
+        personagem.setDef(val.nextInt(10));
+        personagem.setForca(val.nextInt(10));
+        System.out.println("Atributos de personagem gerados aleatoriamente!");
 
     }
     
