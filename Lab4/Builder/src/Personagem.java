@@ -64,6 +64,7 @@ public class Personagem {
         return def;
     }
 
+    
     public void setDef(int def) {
         this.def = def;
     }
